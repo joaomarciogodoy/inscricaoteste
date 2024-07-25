@@ -20,8 +20,13 @@ app.use(express.static('public'))
 app.use('/pessoas', pessoaRoutes)
 
 app.get('/', (req, res) => {
-    res.render('pessoas/index')
+    res.render('pessoas/home')
 })
+
+app.get('/conferencia', (req, res) => {
+    res.render('pessoas/conferencia')
+})
+
 
 //configure view aengine
 

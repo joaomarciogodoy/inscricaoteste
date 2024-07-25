@@ -4,22 +4,13 @@ const router = express.Router();
 
 const Pessoa = require('../models/pessoa.model')
 
-router.get('/', (req, res) => {
-    Pessoa.find().lean()
-        .then(data => {
-            res.render('pessoas/index', { pessoas: data, layout: false })
-        })
-        .catch(err => console.log(err))
-})
 
 router.get('/registrar', (req, res) => {
     res.render('pessoas/registrar')
 
 })
 
-router.get('/tudocerto', (req, res) => {
-    res.render('pessoas/tudocerto')
-})
+
 
 
 router.post('/registrar', (req, res) => {
@@ -30,10 +21,27 @@ router.post('/registrar', (req, res) => {
         telefone: req.body.telefone
     }
 
+
     new Pessoa({ ...pessoa }).save()
-        .then(data => res.render('pessoas/tudocerto'))
+        .then(res.redirect(`/pessoas/pagamento`),)
         .catch(err => console.log(err))
 })
 
+
+// class PessoasController {
+//     static async showPessoas(req, res) {
+//         const pessoas = await Pessoa.find().lean()
+//         res.render('pessoas/pagamento', { pessoas })
+//     }
+// }
+
+
+
+router.get('/pagamento', (req, res) => {
+    res.render('pessoas/pagamento')
+
+
+
+})
 
 module.exports = router;

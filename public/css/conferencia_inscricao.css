@@ -1,0 +1,60 @@
+#container-conferencia {
+    margin: 0 auto;
+    padding-top: 110px;
+    height: 100vh;
+    width: 800px;
+    display: flex;
+    align-items: center;
+}
+
+.column-conferencia {
+    flex-grow: 1;
+    width: 50%;
+}
+
+.left-conferencia {
+    background-image: url(../img/main-foto.png);
+    background-size: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+    margin-bottom: 50px;
+}
+
+.right-conferencia {
+    padding-left: 20px;
+}
+
+.login-panel-conferencia {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.logo-img-jovem-conferencia {
+    width: 175px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-mudanca input[type="text"] {
+    background-color: #fff;
+    border: 1px solid rgb(236, 234, 234);
+    height: 40px;
+    border-radius: 4px;
+    margin: 0 0 5px 0;
+    font-size: 13px;
+    width: 320px;
+    color: #000000;
+}
+
+.input-mudanca label {
+    margin: 0;
+}
