@@ -80,6 +80,11 @@ html {
     font-size: 70px;
 }
 
+.sos {
+    color: #b80707;
+    font-size: 50px;
+}
+
 .main p {
     font-size: 24px;
     font-style: italic;

@@ -9,7 +9,8 @@
 
 .column-conferencia {
     flex-grow: 1;
-    width: 50%;
+    width: 100%;
+
 }
 
 .left-conferencia {
@@ -19,7 +20,10 @@
     background-position: center;
     height: 600px;
     margin-bottom: 50px;
+    display: none;
 }
+
+
 
 .right-conferencia {
     padding-left: 20px;
@@ -51,10 +55,46 @@ form {
     border-radius: 4px;
     margin: 0 0 5px 0;
     font-size: 13px;
-    width: 320px;
+    width: 250px;
     color: #000000;
 }
 
 .input-mudanca label {
     margin: 0;
+}
+
+.pix img {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+
+
+
+@media (max-width: 350px) {
+
+
+    .right-conferencia {
+        padding-left: 0;
+    }
+
+
+    #container-conferencia {
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        cursor: pointer;
+        width: 250px;
+        margin-top: 10px;
+        height: 50px;
+        border: 0;
+        background-color: #3c96ed;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
 }
