@@ -36,7 +36,8 @@ form {
 }
 
 .input-mudanca input[type="text"],
-.input-mudanca input[type="number"] {
+.input-mudanca input[type="number"],
+.input-mudanca input[type="textarea"] {
     background-color: #e6e6e6;
     border: 1px solid rgb(236, 234, 234);
     height: 40px;

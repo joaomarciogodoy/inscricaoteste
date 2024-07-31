@@ -1,0 +1,41 @@
+.container-oracao {
+    text-align: center;
+
+}
+
+.container-pedidos {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+
+@media (max-width: 1025px) {
+    .container-pedidos {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        max-width: 800px;
+        margin: 50px auto;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 769px) {
+    .container-pedidos {
+        grid-template-columns: 1fr 1fr;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 426px) {
+    .container-pedidos {
+        grid-template-columns: 1fr;
+        max-width: 50%;
+    }
+}

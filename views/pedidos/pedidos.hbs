@@ -1,0 +1,23 @@
+<div class="container-oracao">
+    <h1 class="oracao">Pedidos de oração</h1>
+    <a href="/pedidos/registrar" class="btn btn-primary">Enviar pedido de oração</a>
+    <div class="container-pedidos">
+        {{#each pedidos}}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+
+                <h5 class="card-title">{{nome}}</h5>
+
+
+                <p class="card-text">{{motivo}}</p>
+
+            </div>
+        </div>
+
+        {{else}}
+
+        <h1>Nenhum Pedido</h1>
+
+        {{/each}}
+    </div>
+</div>

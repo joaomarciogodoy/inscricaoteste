@@ -8,6 +8,7 @@ const port = process.env.PORT || 4000
 //imports
 const connectDb = require('./db');
 const pessoaRoutes = require('./controllers/pessoa.controller')
+const pedidosRoutes = require('./controllers/pedido.controller')
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.static('public'))
 
 //routing
 app.use('/pessoas', pessoaRoutes)
+app.use('/pedidos', pedidosRoutes);
 
 app.get('/', (req, res) => {
     res.render('pessoas/home')
