@@ -18,7 +18,8 @@ router.post('/registrar', (req, res) => {
         nome: req.body.nome,
         email: req.body.email,
         idade: req.body.idade,
-        telefone: req.body.telefone
+        telefone: req.body.telefone,
+        cidade: req.body.cidade
     }
 
 

@@ -1,33 +1,53 @@
-<section class="cultos" id="cultos">
-    <h2>INSCRITOS</h2>
+<table class="table">
+    <thead>
+        <tr class="text-center">
+            <th scope="col">NOME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">TELEFONE</th>
+            <th scope="col">IDADE</th>
+            <th scope="col">CIDADE</th>
+            <th scope="col">AÇÃO</th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <div class="culto-list"></div>
-
-    {{#each pessoas}}
-
-
-
-
-    <li>
-        <h3>{{nome}} || Telefone: {{telefone}} || {{idade}} anos || <form action="/pessoas/inscritosadm/apagar"
-                method="post">
-                <input type="hidden" name="apagar" value="{{_id}}">
-                <button type="submit">EXCLUIR</button>
-            </form>
-        </h3>
-
-    </li>
-
-    <hr />
+        {{#each pessoas}}
 
 
 
+        <tr class="text-center">
+            <td>{{nome}}</td>
+            <td>{{email}}</td>
+            <td>{{telefone}}</td>
+            <td>{{idade}} anos</td>
+            <td>{{cidade}} </td>
+            <td>
+                <form action="/pessoas/inscritosadm/apagar" method="post">
+                    <input type="hidden" class="inputid" name="apagar" value="{{_id}}">
+                    <button type="submit" class="btn btn-danger" onclick="return confirmSubmit()">EXCLUIR</button>
+                </form>
+            </td>
+
+        </tr>
+
+
+        {{/each}}
 
 
 
 
-    {{/each}}
+    </tbody>
+</table>
 
-    </div>
 
-</section>
+<script>
+    // JavaScript function to validate form on submission
+    function confirmSubmit() {
+        var agree = confirm("Tem certeza que quer EXCLUIR?");
+        if (agree)
+            return true;
+        else
+            return false;
+    }
+    // -->
+</script>
