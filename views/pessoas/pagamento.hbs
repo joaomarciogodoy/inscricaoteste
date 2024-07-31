@@ -14,7 +14,7 @@
 
 
             <li>
-                <a href="#home">Home</a>
+                <a href="/" target="_parent">Home</a>
             </li>
 
 
@@ -47,7 +47,7 @@
 
 
 
-<section class="about" id="sobre">
+<section class="about pagamento" id="sobre">
 
 
     <div class="frasespix">
@@ -58,9 +58,10 @@
     <div class="pix">
         <img src=" ../../img/pix.jpg">
 
-        <p>COPIE O PIX AQUI</p>
-        <input type="text"
-            value="00020101021126580014BR.GOV.BCB.PIX01366215aa67-ca22-4841-a7c1-4e5d1f482506520400005303986540549.995802BR592450.486.046 HENRIQUE BONF6008SAOPAULO61080132305062070503***63044005">
+        <button id="pixcopy" onclick="copiar()"
+            value="00020101021126580014BR.GOV.BCB.PIX01366215aa67-ca22-4841-a7c1-4e5d1f482506520400005303986540549.995802BR592450.486.046 HENRIQUE BONF6008SAOPAULO61080132305062070503***63044005">CLIQUE
+            PARA COPIAR</button>
+
 
         <a href="https://pay.infinitepay.io/henrique_canato/59,99" target="_blank">NO CARTÃO</a>
         <a href="https://wa.me/5519994718633?text=Paz%20do%20Senhor%2C%20acabei%20de%20fazer%20o%20pagamento%2C%20vou%20te%20mandar%20o%20comprovante!"
@@ -71,3 +72,20 @@
 
 
 </section>
+
+
+<script>
+
+
+    const input = document.querySelector('#pixcopy')
+
+    function copiar() {
+        navigator.clipboard.writeText(input.value).then(() => {
+            alert('Código copiado com sucesso!')
+        })
+    }
+
+
+
+
+</script>

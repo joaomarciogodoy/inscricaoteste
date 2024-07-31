@@ -1,3 +1,8 @@
+.pagamento {
+    overflow: hidden !important;
+}
+
+
 .pix {
     display: flex;
     flex-direction: column;
@@ -11,6 +16,21 @@
 }
 
 .pix a {
+    cursor: pointer;
+    text-align: center;
+    width: 280px;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    background-color: #3c96ed;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.pix button {
     cursor: pointer;
     text-align: center;
     width: 280px;
