@@ -1,0 +1,33 @@
+<section class="cultos" id="cultos">
+    <h2>INSCRITOS</h2>
+
+    <div class="culto-list"></div>
+
+    {{#each pessoas}}
+
+
+
+
+    <li>
+        <h3>{{nome}} || Telefone: {{telefone}} || {{idade}} anos || <form action="/pessoas/inscritosadm/apagar"
+                method="post">
+                <input type="hidden" name="apagar" value="{{_id}}">
+                <button type="submit">EXCLUIR</button>
+            </form>
+        </h3>
+
+    </li>
+
+    <hr />
+
+
+
+
+
+
+
+    {{/each}}
+
+    </div>
+
+</section>

@@ -44,4 +44,21 @@ router.get('/pagamento', (req, res) => {
 
 })
 
+
+
+router.get('/inscritosadm', (req, res) => {
+    Pessoa.find().lean().then((pessoas) => {
+        res.render('pessoas/inscritos', { pessoas: pessoas })
+    })
+
+})
+
+
+router.post('/inscritosadm/apagar', (req, res) => {
+    Pessoa.deleteOne({ _id: req.body.apagar }).lean().then((pessoas) => {
+        res.redirect('/pessoas/inscritosadm')
+    })
+
+})
+
 module.exports = router;
