@@ -1,44 +1,31 @@
+#wrapper-conferencia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #container-conferencia {
     margin: 0 auto;
-    padding-top: 110px;
     height: 100vh;
     width: 800px;
     display: flex;
     align-items: center;
-}
-
-.column-conferencia {
-    flex-grow: 1;
-    width: 100%;
-
-}
-
-.left-conferencia {
-    background-image: url(../img/main-foto.png);
-    background-size: 450px;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 600px;
-    margin-bottom: 50px;
-    display: none;
+    justify-content: center;
 }
 
 
 
-.right-conferencia {
-    padding-left: 20px;
-}
 
 .login-panel-conferencia {
+    width: 800px;
     background-color: #fff;
     border: 1px solid #e6e6e6;
     text-align: center;
     padding: 20px 0;
 }
 
-.logo-img-jovem-conferencia {
-    width: 175px;
-}
+
 
 form {
     display: flex;
@@ -48,16 +35,26 @@ form {
     gap: 10px;
 }
 
-.input-mudanca input[type="text"] {
-    background-color: #fff;
+.input-mudanca input[type="text"],
+.input-mudanca input[type="number"] {
+    background-color: #e6e6e6;
     border: 1px solid rgb(236, 234, 234);
     height: 40px;
     border-radius: 4px;
     margin: 0 0 5px 0;
+    padding-left: 5px;
     font-size: 13px;
-    width: 250px;
+    width: 80%;
     color: #000000;
 }
+
+.input-mudanca input[type="text"]::placeholder,
+.input-mudanca input[type="number"]::placeholder {
+
+    color: #000000;
+}
+
+
 
 .input-mudanca label {
     margin: 0;
@@ -71,30 +68,33 @@ form {
 
 
 
-@media (max-width: 350px) {
-
-
-    .right-conferencia {
-        padding-left: 0;
+@media (max-width: 770px) {
+    .column-conferencia {
+        width: 80%;
     }
 
-
-    #container-conferencia {
+    .login-panel-conferencia {
         width: 100%;
     }
 
-    input[type="submit"] {
-        cursor: pointer;
-        width: 250px;
-        margin-top: 10px;
-        height: 50px;
-        border: 0;
-        background-color: #3c96ed;
-        border-radius: 4px;
-        color: #fff;
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
 }
+
+
+
+@media (max-width: 426px) {
+
+    #fazer-inscricao {
+        width: 250px;
+    }
+}
+
+@media (max-width: 321px) {
+    #fazer-inscricao {
+        width: 200px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 350px) {}
+
+@media (max-width: 350px) {}

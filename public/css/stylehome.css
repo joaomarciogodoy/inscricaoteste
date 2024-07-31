@@ -222,7 +222,7 @@ html {
 
 .contatos img {
     cursor: pointer;
-    width: 30%;
+    width: 60%;
     margin-left: 0.5%;
     margin-right: 0.5%;
     opacity: 0.8;
@@ -240,7 +240,7 @@ html {
 
 .social img {
     margin: 0 auto;
-    width: 25%;
+    width: 20%;
 }
 
 .action {
@@ -327,7 +327,35 @@ footer p {
     .contatos {
         padding: 0 0 80px 0;
     }
+
+    .contatos img {
+        width: 20%;
+    }
+
 }
+
+
+
+
+
+
+@media (max-width: 800px) {
+
+    .nav img {
+        display: none;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+
+}
+
+
+
+
+
+
 
 
 @media (max-width: 430px) {
@@ -338,15 +366,30 @@ footer p {
     }
 
     .nav {
-        display: flex;
+        display: none;
         flex-direction: column;
-        height: 100px;
+        height: 170px;
         align-items: center;
         justify-content: center;
     }
 
     .nav-list {
-        visibility: hidden;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-list li a {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav-list li {
+        margin-bottom: 10px;
+    }
+
+    .main div {
+        margin-top: 50px;
     }
 
     .logo img {
@@ -356,7 +399,7 @@ footer p {
 
 
     .about {
-        padding: 80px 0;
+        padding: 0;
     }
 
     .about div h2 {
@@ -394,7 +437,7 @@ footer p {
 
     .contatos img {
         cursor: pointer;
-        width: 60%;
+        width: 20%;
         margin-left: 0.5%;
         margin-right: 0.5%;
         opacity: 0.8;
@@ -416,6 +459,13 @@ footer p {
 }
 
 @media (max-width: 378px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        height: 170px;
+        align-items: center;
+        justify-content: center;
+    }
 
     .main div h1 {
         font-size: 40px;
@@ -423,6 +473,20 @@ footer p {
 }
 
 @media (max-width: 321px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        height: 170px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .call-to-action {
+        width: 250px;
+        font-size: 18px;
+    }
+
+
 
     .main div h1 {
         font-size: 30px;

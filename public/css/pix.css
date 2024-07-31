@@ -1,7 +1,6 @@
-.pagamento {
-    overflow: hidden !important;
+.about {
+    padding: 0;
 }
-
 
 .pix {
     display: flex;
@@ -48,4 +47,15 @@
 .frasespix {
     margin-top: 50px;
 
+}
+
+
+@media (max-width: 770px) {
+    h2 {
+        text-align: center;
+    }
+
+    .frasespix p {
+        text-align: center !important;
+    }
 }
