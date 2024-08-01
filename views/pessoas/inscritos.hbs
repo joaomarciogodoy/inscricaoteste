@@ -2,9 +2,9 @@
     <thead>
         <tr class="text-center">
             <th scope="col">NOME</th>
-            <th scope="col">EMAIL</th>
+            <th scope="col">PAGAMENTO</th>
+            <th scope="col">DATA PAGAMENTO</th>
             <th scope="col">TELEFONE</th>
-            <th scope="col">IDADE</th>
             <th scope="col">CIDADE</th>
             <th scope="col">AÇÃO</th>
         </tr>
@@ -17,14 +17,20 @@
 
         <tr class="text-center">
             <td>{{nome}}</td>
-            <td>{{email}}</td>
+            <td>{{pagamento}}</td>
+            <td>{{data_pagamento}}</td>
             <td>{{telefone}}</td>
-            <td>{{idade}} anos</td>
             <td>{{cidade}} </td>
             <td>
                 <form action="/pessoas/inscritosadm/apagar" method="post">
                     <input type="hidden" class="inputid" name="apagar" value="{{_id}}">
-                    <button type="submit" class="btn btn-danger" onclick="return confirmSubmit()">EXCLUIR</button>
+                    <button type="submit" class="btn btn-danger mb-2" onclick="return confirmDelete()">EXCLUIR</button>
+                </form>
+
+
+                <form action="/pessoas/inscritosadm/pagou" method="post">
+                    <input type="hidden" class="inputid" name="pagamento" value="{{_id}}">
+                    <button type="submit" class="btn btn-success" onclick="return confirmPagou()">PAGOU</button>
                 </form>
             </td>
 
@@ -42,12 +48,14 @@
 
 <script>
     // JavaScript function to validate form on submission
-    function confirmSubmit() {
-        var agree = confirm("Tem certeza que quer EXCLUIR?");
-        if (agree)
-            return true;
-        else
-            return false;
+    function confirmDelete() {
+        var tentou = confirm(" Tem certeza que deseja EXCLUIR?"); if (tentou) return true; else return false;
+    } // -->
+
+    function confirmPagou() {
+        var pagou = confirm(" Tem certeza que a pessoa PAGOU?"); if (pagou) return true; else return false;
     }
-    // -->
+
+
+
 </script>

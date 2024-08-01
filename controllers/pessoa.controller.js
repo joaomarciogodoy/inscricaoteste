@@ -4,6 +4,8 @@ const router = express.Router();
 
 const Pessoa = require('../models/pessoa.model')
 
+const mongoose = require('mongoose');
+
 
 router.get('/registrar', (req, res) => {
     res.render('pessoas/registrar')
@@ -56,10 +58,39 @@ router.get('/inscritosadm', (req, res) => {
 
 
 router.post('/inscritosadm/apagar', (req, res) => {
-    Pessoa.deleteOne({ _id: req.body.apagar }).lean().then((pessoas) => {
+    Pessoa.deleteOne({ _id: req.body.apagar }).lean().then(() => {
         res.redirect('/pessoas/inscritosadm')
     })
 
 })
+
+
+
+router.post('/inscritosadm/pagou', (req, res) => {
+
+    Pessoa.updateOne({ _id: req.body.pagamento }, { pagamento: "SIM" }).lean().then(() => {
+        const data_do_pagamento = Date.now()
+        const dt_pagamento = new Date(data_do_pagamento)
+
+        const pagamento_db = dt_pagamento.toLocaleDateString('pt-BR')
+
+        Pessoa.updateOne({ _id: req.body.pagamento }, { data_pagamento: pagamento_db }).then(() => {
+            res.redirect('/pessoas/inscritosadm')
+        })
+
+
+
+
+
+
+    })
+
+})
+
+router.post('/inscritosadm/pagou', (req, res) => {
+    Pessoa
+
+})
+
 
 module.exports = router;

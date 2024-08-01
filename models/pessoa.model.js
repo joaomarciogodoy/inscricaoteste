@@ -6,4 +6,7 @@ module.exports = mongoose.model('Pessoa', {
     idade: String,
     telefone: Number,
     cidade: String,
+    data_inscricao: { type: Date, default: Date.now() },
+    pagamento: { type: String, default: "Não" },
+    data_pagamento: { type: String, default: null }
 })
