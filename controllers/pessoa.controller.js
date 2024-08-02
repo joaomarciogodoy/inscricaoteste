@@ -26,7 +26,7 @@ router.post('/registrar', (req, res) => {
 
 
     new Pessoa({ ...pessoa }).save()
-        .then(res.redirect(`/pessoas/pagamento`),)
+        .then(res.redirect(`/pessoas/fim`),)
         .catch(err => console.log(err))
 })
 
@@ -37,6 +37,13 @@ router.post('/registrar', (req, res) => {
 //         res.render('pessoas/pagamento', { pessoas })
 //     }
 // }
+
+router.get('/fim', (req, res) => {
+    res.render('pessoas/fim')
+
+
+
+})
 
 
 
