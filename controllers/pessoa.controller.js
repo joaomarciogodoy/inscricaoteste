@@ -54,6 +54,14 @@ router.get('/pagamento', (req, res) => {
 
 })
 
+router.get('/verification', (req, res) => {
+    res.render('pessoas/verification')
+
+
+
+})
+
+
 
 
 router.get('/inscritosadm', (req, res) => {

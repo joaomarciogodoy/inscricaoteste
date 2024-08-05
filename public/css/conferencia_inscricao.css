@@ -87,6 +87,31 @@ form {
     #fazer-inscricao {
         width: 250px;
     }
+
+    .container-verification {
+        flex-direction: column;
+    }
+
+    .container-verification {
+        margin: 50px auto;
+        height: 400px;
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        overflow: hidden;
+    }
+
+    .column-verification {
+        margin-top: 50px !important;
+        height: 200px !important;
+        text-align: center;
+        flex-grow: 1;
+        width: 50%;
+
+    }
+
 }
 
 @media (max-width: 321px) {
