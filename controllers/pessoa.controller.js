@@ -57,9 +57,29 @@ router.get('/pagamento', (req, res) => {
 
 
 router.get('/inscritosadm', (req, res) => {
-    Pessoa.find().lean().then((pessoas) => {
-        res.render('pessoas/inscritos', { pessoas: pessoas })
-    })
+
+    let filtro = ''
+
+    if (req.query.search) {
+        filtro = req.query.search
+
+        if (filtro == 'SIM') {
+            Pessoa.find({ pagamento: 'SIM' }).lean().then((pessoas) => {
+                res.render('pessoas/inscritos', { pessoas: pessoas })
+            })
+        } if (filtro == 'NÃO') {
+            Pessoa.find({ pagamento: 'NÃO' }).lean().then((pessoas) => {
+                res.render('pessoas/inscritos', { pessoas: pessoas })
+            })
+        }
+    } else {
+
+
+
+        Pessoa.find().lean().then((pessoas) => {
+            res.render('pessoas/inscritos', { pessoas: pessoas })
+        })
+    }
 
 })
 

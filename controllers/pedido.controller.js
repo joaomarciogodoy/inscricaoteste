@@ -50,4 +50,9 @@ router.post('/registrar', (req, res) => {
         .catch(err => console.log(err))
 })
 
+
+router.get('/concluido', (req, res) => {
+    res.render('pedidos/concluido')
+})
+
 module.exports = router;
