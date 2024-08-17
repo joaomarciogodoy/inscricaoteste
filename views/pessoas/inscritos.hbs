@@ -1,12 +1,12 @@
 <form action="/pessoas/inscritosadm">
 
-    <select name="search" class="mt-2">
+    <select name="search" class="mt-2 no-print">
         <option value="SIM">PAGOU</option>
         <option value="NÃO">NÃO PAGOU</option>
         <option selected value="">TODOS</option>
     </select>
     {{!-- <input type="text" name="search"> --}}
-    <button type="submit" class="btn btn-warning">Enviar</button>
+    <button type="submit" class="btn btn-warning no-print">Enviar</button>
 
 
 </form>
@@ -20,8 +20,8 @@
             <th scope="col">DATA PAGAMENTO</th>
             <th scope="col">DATA INSCRIÇÃO</th>
             <th scope="col">TELEFONE</th>
-            <th scope="col">CIDADE</th>
-            <th scope="col">AÇÃO</th>
+            <th scope="col" class="no-print">CIDADE</th>
+            <th scope="col" class="no-print">AÇÃO</th>
         </tr>
     </thead>
     <tbody>
@@ -36,15 +36,15 @@
             <td>{{data_pagamento}}</td>
             <td>{{data_inscricao}}</td>
             <td>{{telefone}}</td>
-            <td>{{cidade}} </td>
+            <td class="no-print">{{cidade}} </td>
             <td>
-                <form action="/pessoas/inscritosadm/apagar" method="post">
+                <form action="/pessoas/inscritosadm/apagar" class="no-print" method="post">
                     <input type="hidden" class="inputid" name="apagar" value="{{_id}}">
                     <button type="submit" class="btn btn-danger mb-2" onclick="return confirmDelete()">EXCLUIR</button>
                 </form>
 
 
-                <form action="/pessoas/inscritosadm/pagou" method="post">
+                <form action="/pessoas/inscritosadm/pagou" class="no-print" method="post">
                     <input type="hidden" class="inputid" name="pagamento" value="{{_id}}">
                     <button type="submit" class="btn btn-success" onclick="return confirmPagou()">PAGOU</button>
                 </form>
