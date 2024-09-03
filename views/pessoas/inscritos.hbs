@@ -11,7 +11,7 @@
 
 </form>
 
-
+<h2>Quantidade {{qtd}}</h2>
 <table class="table">
     <thead>
         <tr class="text-center">
@@ -20,7 +20,7 @@
             <th scope="col">DATA PAGAMENTO</th>
             <th scope="col">DATA INSCRIÇÃO</th>
             <th scope="col">TELEFONE</th>
-            <th scope="col" class="no-print">CIDADE</th>
+            <th scope="col" class="">CIDADE</th>
             <th scope="col" class="no-print">AÇÃO</th>
         </tr>
     </thead>
@@ -36,7 +36,7 @@
             <td>{{data_pagamento}}</td>
             <td>{{data_inscricao}}</td>
             <td>{{telefone}}</td>
-            <td class="no-print">{{cidade}} </td>
+            <td class="">{{cidade}} </td>
             <td>
                 <form action="/pessoas/inscritosadm/apagar" class="no-print" method="post">
                     <input type="hidden" class="inputid" name="apagar" value="{{_id}}">

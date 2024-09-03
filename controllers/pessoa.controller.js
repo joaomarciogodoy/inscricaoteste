@@ -73,11 +73,13 @@ router.get('/inscritosadm', (req, res) => {
 
         if (filtro == 'SIM') {
             Pessoa.find({ pagamento: 'SIM' }).lean().then((pessoas) => {
-                res.render('pessoas/inscritos', { pessoas: pessoas })
+                const qtd = pessoas.length
+                res.render('pessoas/inscritos', { pessoas: pessoas, qtd:qtd })
             })
         } if (filtro == 'NÃO') {
             Pessoa.find({ pagamento: 'NÃO' }).lean().then((pessoas) => {
-                res.render('pessoas/inscritos', { pessoas: pessoas })
+                const qtd = pessoas.length
+                res.render('pessoas/inscritos', { pessoas: pessoas, qtd:qtd })
             })
         }
     } else {
@@ -85,7 +87,8 @@ router.get('/inscritosadm', (req, res) => {
 
 
         Pessoa.find().lean().then((pessoas) => {
-            res.render('pessoas/inscritos', { pessoas: pessoas })
+            const qtd = pessoas.length
+            res.render('pessoas/inscritos', { pessoas: pessoas, qtd:qtd })
         })
     }
 
