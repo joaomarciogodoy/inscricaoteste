@@ -6,6 +6,8 @@ const Pessoa = require('../models/pessoa.model')
 
 const mongoose = require('mongoose');
 
+const {Parser} = require("json2csv")
+
 
 router.get('/registrar', (req, res) => {
     res.render('pessoas/registrar')
@@ -87,10 +89,28 @@ router.get('/inscritosadm', (req, res) => {
 
 
         Pessoa.find().lean().then((pessoas) => {
+           
+              
+            
             const qtd = pessoas.length
             res.render('pessoas/inscritos', { pessoas: pessoas, qtd:qtd })
         })
     }
+
+})
+
+router.get("/csv", (req, res)=>{
+
+    Pessoa.find().lean().then((pessoas) => {
+           
+        const json2csvParser = new Parser()
+        const csv = json2csvParser.parse(pessoas)
+        res.attachment("informations.csv")
+        res.send(csv)
+            
+       
+    })
+    
 
 })
 
